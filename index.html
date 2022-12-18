@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body>
+    <div class="main-boxshadow px-4 py-6 bg-slate-900/80 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl h-[full] w-11/12 md:w-full md:max-w-md">
+        <h1 class="text-center text-2xl font-normal text-white mt-1">Login</h1>
+
+        <!-- inputs -->
+        <div class="mt-14 w-full flex flex-col gap-y-14">
+
+            <div class="relative w-11/12 mx-auto">
+                <input type="text" class="w-full bg-transparent focus:outline-none border-b border-gray-50/30 text-sm text-gray-50 peer pb-0.5">
+                <label class="pb-1 absolute top-1/2 -translate-y-1/2 text-base text-gray-100 pointer-events-none peer-focus:-top-3.5 peer-focus:text-purple-400/60 peer-focus:pb-0 peer-focus:scale-[0.85] transition-all duration-300 block">Username</label>
+                <div class="absolute bottom-0 left-0 h-px w-full overflow-x-hidden">
+                    <div class="w-full h-full bg-gray-50  absolute top-0 left-0 -translate-x-full first-bg"></div>
+                    <div class="w-full h-full bg-gray-50 absolute top-0 right-0 translate-x-full second-bg"></div>
+                </div>
+            </div>
+
+            <div class="relative w-11/12 mx-auto">
+                <input type="password" class="w-full bg-transparent focus:outline-none border-b border-gray-50/30 text-sm text-gray-50 peer pb-0.5">
+                <label class="pb-1 absolute top-1/2 -translate-y-1/2 text-base text-gray-100 pointer-events-none peer-focus:-top-3.5 peer-focus:text-purple-400/60 peer-focus:pb-0 peer-focus:scale-[0.85] transition-all duration-300 block">Password</label>
+                <div class="absolute bottom-0 left-0 h-px w-full overflow-x-hidden">
+                    <div class="w-full h-full bg-gray-50  absolute top-0 left-0 -translate-x-full first-bg"></div>
+                    <div class="w-full h-full bg-gray-50 absolute top-0 right-0 translate-x-full second-bg"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="w-11/12 mx-auto mt-20 flex justify-center items-center gap-x-4">
+            <button class="flex-1 transition-all uppercase duration-200 hover-boxshadow px-4 border border-white rounded-md hover:bg-white hover:text-purple-600 hover:font-semibold active:scale-95 py-2 text-white text-base">submit</button>
+
+            <div class="flex flex-col gap-y-1 text-center">
+                <p class="text-sm text-white">Dont have an account ?</p>
+                <a href="#" class="text-purple-400 text-sm link link-hover">Register</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

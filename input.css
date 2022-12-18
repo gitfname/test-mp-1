@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.main-boxshadow {
+    box-shadow: 0 7px 12px rgb(141, 81, 209)
+}
+
+.hover-boxshadow:hover {
+    box-shadow: 0 0 10px rgb(87, 37, 144),
+                0 0 30px rgb(87, 37, 144),
+                0 0 50px rgb(87, 37, 144),
+                0 0 70px rgb(87, 37, 144),
+                0 0 90px rgb(87, 37, 144);
+}
+
+
+input:focus~div div.first-bg {
+    transform: translateX(0);
+    transition: transform .4s 0s linear;
+}
+
+input~div div.second-bg {
+    /* transition-delay: .4s; */
+    transition: transform .4s 0s linear;
+}
+
+input:focus~div div.second-bg {
+    transform: translateX(0);
+    transition: transform 0s .4s linear;
+}
