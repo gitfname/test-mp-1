@@ -16,17 +16,34 @@
 }
 
 
-input:focus~div div.first-bg {
-    transform: translateX(0);
-    transition: transform .4s 0s linear;
+
+input:checked~div label {
+    color: rgb(165, 165, 165);
 }
 
-input~div div.second-bg {
-    /* transition-delay: .4s; */
-    transition: transform .4s 0s linear;
+
+input~div div {
+    transition: transform .2s 0s linear;
 }
 
-input:focus~div div.second-bg {
+input:checked~div div {
     transform: translateX(0);
-    transition: transform 0s .4s linear;
+    transition: transform .35s 0s linear;
+}
+
+
+
+
+body *::-webkit-scrollbar {
+    width: 6px;
+}
+
+body *::-webkit-scrollbar-track {
+    /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+    background-color: rgba(0, 0, 0, .08);
+}
+
+body *::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 20px;
 }

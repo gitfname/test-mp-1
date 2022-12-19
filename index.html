@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,42 +8,348 @@
     <link rel="stylesheet" href="output.css">
 </head>
 
-<body>
-    <div class="main-boxshadow px-4 py-6 bg-slate-900/80 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl h-[full] w-11/12 md:w-full md:max-w-md">
-        <h1 class="text-center text-2xl font-normal text-white mt-1">Login</h1>
+<body class="w-full h-screen">
+    <div class="w-full h-full grid grid-cols-[2fr_7fr_3fr]">
 
-        <!-- inputs -->
-        <div class="mt-14 w-full flex flex-col gap-y-14">
+        <!-- left side -->
+        <div class="h-full bg-gray-100 border-r border-slate-300 overflow-y-hidden">
+            <div class="w-9/12 mx-auto space-y-3 py-7 h-full overflow-y-auto">
+                <div class="flex items-center gap-x-2">
+                    <span class="iconify" data-icon="mdi:inbox"></span>
+                    <p class="text-black text-sm capitalize">inbox</p>
+                </div>
 
-            <div class="relative w-11/12 mx-auto">
-                <input type="text" class="w-full bg-transparent focus:outline-none border-b border-gray-50/30 text-sm text-gray-50 peer pb-0.5">
-                <label class="pb-1 absolute top-1/2 -translate-y-1/2 text-base text-gray-100 pointer-events-none peer-focus:-top-3.5 peer-focus:text-purple-400/60 peer-focus:pb-0 peer-focus:scale-[0.85] transition-all duration-300 block">Username</label>
-                <div class="absolute bottom-0 left-0 h-px w-full overflow-x-hidden">
-                    <div class="w-full h-full bg-gray-50  absolute top-0 left-0 -translate-x-full first-bg"></div>
-                    <div class="w-full h-full bg-gray-50 absolute top-0 right-0 translate-x-full second-bg"></div>
+                <div class="flex items-center gap-x-2">
+                    <span class="iconify" data-icon="mdi:star-outline"></span>
+                    <p class="text-black text-sm capitalize">today</p>
+                </div>
+
+                <div class="flex items-center gap-x-2">
+                    <span class="iconify" data-icon="mdi:calendar-range"></span>
+                    <p class="text-black text-sm capitalize">upcoming</p>
+                </div>
+
+                <div class="flex items-center gap-x-2">
+                    <span class="iconify" data-icon="mdi:pound"></span>
+                    <p class="text-black text-sm capitalize">important</p>
+                </div>
+
+                <div class="flex items-center gap-x-2">
+                    <span class="iconify" data-icon="mdi:account-group"></span>
+                    <p class="text-black text-sm capitalize">meetings</p>
+                </div>
+
+                <div class="flex items-center gap-x-2">
+                    <span class="iconify" data-icon="mdi:delete-outline"></span>
+                    <p class="text-black text-sm capitalize">trash</p>
+                </div>
+
+                <div class="!mt-12"></div>
+
+                <div class="flex items-center gap-x-2">
+                    <span class="iconify" data-icon="mdi:account-multiple"></span>
+                    <p class="text-black text-sm capitalize">family</p>
+                </div>
+
+                <div class="flex items-center gap-x-2">
+                    <span class="iconify" data-icon="mdi:white-balance-sunny"></span>
+                    <p class="text-black text-sm capitalize">vacation</p>
+                </div>
+
+                <div class="flex items-center gap-x-2">
+                    <span class="iconify" data-icon="mdi:chart-line-variant"></span>
+                    <p class="text-black text-sm capitalize">festival</p>
+                </div>
+
+                <div class="flex items-center gap-x-2">
+                    <span class="iconify" data-icon="mdi:lightning-bolt-outline"></span>
+                    <p class="text-black text-sm capitalize">concerts</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- main section -->
+        <div class="h-full bg-gray-50 border-r border-slate-300 pt-2 px-4 grid grid-rows-[120px_1fr] overflow-y-hidden">
+            <div>
+                <h2 class="text-2xl text-black/90 capitalize">today tasks</h2>
+
+                <!-- task groups -->
+                <div class="w-full h-10 mt-6 flex items-stretch gap-x-2 border-b border-gray-400">
+                    <label for="group-1" class="flex-1 flex items-center justify-center cursor-pointer relative">
+                        <input checked id="group-1" type="radio" name="task-group" class=" bg-red-300 peer appearance-none hidden">
+                        <p class=" transition-colors duration-200 text-sm text-gray-700 peer-checked:text-green-600 capitalize">all</p>
+                        <div class="absolute bottom-0 left-0 w-full h-px peer-checked:bg-green-600  transition-colors duration-200"></div>
+                    </label>
+    
+                    <label for="group-2" class="flex-1 flex items-center justify-center cursor-pointer relative">
+                        <input id="group-2" type="radio" name="task-group" class=" bg-red-300 peer appearance-none hidden">
+                        <p class=" transition-colors duration-200 text-sm text-gray-700 peer-checked:text-green-600 capitalize">important</p>
+                        <div class="absolute bottom-0 left-0 w-full h-px peer-checked:bg-green-600  transition-colors duration-200"></div>
+                    </label>
+    
+                    <label for="group-3" class="flex-1 flex items-center justify-center cursor-pointer relative">
+                        <input id="group-3" type="radio" name="task-group" class=" bg-red-300 peer appearance-none hidden">
+                        <p class=" transition-colors duration-200 text-sm text-gray-700 peer-checked:text-green-600 capitalize">notes</p>
+                        <div class="absolute bottom-0 left-0 w-full h-px peer-checked:bg-green-600  transition-colors duration-200"></div>
+                    </label>
+    
+                    <label for="group-4" class="flex-1 flex items-center justify-center cursor-pointer relative">
+                        <input id="group-4" type="radio" name="task-group" class=" bg-red-300 peer appearance-none hidden">
+                        <p class=" transition-colors duration-200 text-sm text-gray-700 peer-checked:text-green-600 capitalize">links</p>
+                        <div class="absolute bottom-0 left-0 w-full h-px peer-checked:bg-green-600 transition-colors duration-200"></div>
+                    </label>
                 </div>
             </div>
 
-            <div class="relative w-11/12 mx-auto">
-                <input type="password" class="w-full bg-transparent focus:outline-none border-b border-gray-50/30 text-sm text-gray-50 peer pb-0.5">
-                <label class="pb-1 absolute top-1/2 -translate-y-1/2 text-base text-gray-100 pointer-events-none peer-focus:-top-3.5 peer-focus:text-purple-400/60 peer-focus:pb-0 peer-focus:scale-[0.85] transition-all duration-300 block">Password</label>
-                <div class="absolute bottom-0 left-0 h-px w-full overflow-x-hidden">
-                    <div class="w-full h-full bg-gray-50  absolute top-0 left-0 -translate-x-full first-bg"></div>
-                    <div class="w-full h-full bg-gray-50 absolute top-0 right-0 translate-x-full second-bg"></div>
+            <!-- tasks section -->
+            <div class="w-full h-full overflow-y-auto pr-4 pt-7 pb-3">
+                <div class="flex flex-col gap-y-3">
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-x-2">
+                            <input checked type="checkbox" id="task-1" class="checkbox checkbox-xs checkbox-success rounded-sm">
+                            <div class="relative overflow-hidden">
+                                <label for="task-1" class="text-sm text-gray-700 capitalize select-none cursor-pointer leading-none">create a userflow</label>
+                                <div class="w-full absolute top-1/2 left-0 h-px bg-gray-500 -translate-x-full pointer-events-none"></div>
+                            </div>
+                        </div>
+
+                        <div class="badge badge-sm border border-purple-400 border-opacity-40 bg-purple-400 bg-opacity-40 capitalize text-purple-600 p-2">in progress</div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-x-2">
+                            <input checked type="checkbox" id="task-2" class="checkbox checkbox-xs checkbox-success rounded-sm">
+                            <div class="relative overflow-hidden">
+                                <label for="task-2" class="text-sm text-gray-700 capitalize select-none cursor-pointer leading-none">application implementation</label>
+                                <div class="w-full absolute top-1/2 left-0 h-px bg-gray-500 -translate-x-[101%] pointer-events-none"></div>
+                            </div>
+                        </div>
+
+                        <div class="badge badge-sm bg-red-400 border-red-400 border-opacity-40 bg-opacity-40 capitalize text-red-600 p-2">in review</div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-x-2">
+                            <input checked type="checkbox" id="task-3" class="checkbox checkbox-xs checkbox-success rounded-sm">
+                            <div class="relative overflow-hidden">
+                                <label for="task-3" class="text-sm text-gray-700 capitalize select-none cursor-pointer leading-none">create a dashboard design</label>
+                                <div class="w-full absolute top-1/2 left-0 h-px bg-gray-500 -translate-x-[101%] pointer-events-none"></div>
+                            </div>
+                        </div>
+
+                        <div class="badge badge-sm border border-purple-400 border-opacity-40 bg-purple-400 bg-opacity-40 capitalize text-purple-600 p-2">in progress</div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-x-2">
+                            <input type="checkbox" id="task-4" class="checkbox checkbox-xs checkbox-success rounded-sm">
+                            <div class="relative overflow-hidden">
+                                <label for="task-4" class="text-sm text-gray-700 capitalize select-none cursor-pointer leading-none">application implementation</label>
+                                <div class="w-full absolute top-1/2 left-0 h-px bg-gray-500 -translate-x-[101%] pointer-events-none"></div>
+                            </div>
+                        </div>
+
+                        <div class="badge badge-sm border border-green-400 border-opacity-40 bg-green-400 bg-opacity-40 capitalize text-green-600 p-2">approved</div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-x-2">
+                            <input type="checkbox" id="task-5" class="checkbox checkbox-xs checkbox-success rounded-sm">
+                            <div class="relative overflow-hidden">
+                                <label for="task-5" class="text-sm text-gray-700 capitalize select-none cursor-pointer leading-none">interactive design</label>
+                                <div class="w-full absolute top-1/2 left-0 h-px bg-gray-500 -translate-x-[101%] pointer-events-none"></div>
+                            </div>
+                        </div>
+
+                        <div class="badge badge-sm bg-red-400 border-red-400 border-opacity-40 bg-opacity-40 capitalize text-red-600 p-2">in review</div>
+                    </div>
+
+                    <div class="py-5 flex items-center border-b border-gray-300">
+                        <h2 class="text-gray-800 text-2xl capitalize">upcoming tasks</h2>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-x-2">
+                            <input type="checkbox" id="task-6" class="checkbox checkbox-xs checkbox-success rounded-sm">
+                            <div class="relative overflow-hidden">
+                                <label for="task-6" class="text-sm text-gray-700 capitalize select-none cursor-pointer leading-none">create a web application design</label>
+                                <div class="w-full absolute top-1/2 left-0 h-px bg-gray-500 -translate-x-[101%] pointer-events-none"></div>
+                            </div>
+                        </div>
+
+                        <div class="badge badge-sm border border-gray-400 border-opacity-40 bg-gray-400 bg-opacity-40 capitalize text-gray-600 p-2">waiting</div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-x-2">
+                            <input type="checkbox" id="task-7" class="checkbox checkbox-xs checkbox-success rounded-sm">
+                            <div class="relative overflow-hidden">
+                                <label for="task-7" class="text-sm text-gray-700 capitalize select-none cursor-pointer leading-none">interactive design</label>
+                                <div class="w-full absolute top-1/2 left-0 h-px bg-gray-500 -translate-x-[101%] pointer-events-none"></div>
+                            </div>
+                        </div>
+
+                        <div class="badge badge-sm border border-gray-400 border-opacity-40 bg-gray-400 bg-opacity-40 capitalize text-gray-600 p-2">waiting</div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-x-2">
+                            <input type="checkbox" id="task-8" class="checkbox checkbox-xs checkbox-success rounded-sm">
+                            <div class="relative overflow-hidden">
+                                <label for="task-8" class="text-sm text-gray-700 capitalize select-none cursor-pointer leading-none">dashboard design implementation</label>
+                                <div class="w-full absolute top-1/2 left-0 h-px bg-gray-500 -translate-x-[101%] pointer-events-none"></div>
+                            </div>
+                        </div>
+
+                        <div class="badge badge-sm border border-gray-400 border-opacity-40 bg-gray-400 bg-opacity-40 capitalize text-gray-600 p-2">waiting</div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-x-2">
+                            <input type="checkbox" id="task-9" class="checkbox checkbox-xs checkbox-success rounded-sm">
+                            <div class="relative overflow-hidden">
+                                <label for="task-9" class="text-sm text-gray-700 capitalize select-none cursor-pointer leading-none">create a web application design</label>
+                                <div class="w-full absolute top-1/2 left-0 h-px bg-gray-500 -translate-x-[101%] pointer-events-none"></div>
+                            </div>
+                        </div>
+
+                        <div class="badge badge-sm border border-gray-400 border-opacity-40 bg-gray-400 bg-opacity-40 capitalize text-gray-600 p-2">waiting</div>
+                    </div>
+
                 </div>
             </div>
-
         </div>
 
-        <div class="w-11/12 mx-auto mt-20 flex justify-center items-center gap-x-4">
-            <button class="flex-1 transition-all uppercase duration-200 hover-boxshadow px-4 border border-white rounded-md hover:bg-white hover:text-purple-600 hover:font-semibold active:scale-95 py-2 text-white text-base">submit</button>
+        <!-- right side -->
+        <div class="h-full overflow-y-hidden pt-2 grid grid-rows-[120px_1fr]">
+            <div class="w-10/12 mx-auto relative">
+                <div class="w-full flex items-center justify-end gap-x-2">
+                    <span class="iconify text-lg" data-icon="mdi:account-multiple-outline"></span>
+                    <div class="w-6 h-6 rounded-full bg-blue-600 grid place-items-center text-xs text-white">
+                        6
+                    </div>
+                </div>
 
-            <div class="flex flex-col gap-y-1 text-center">
-                <p class="text-sm text-white">Dont have an account ?</p>
-                <a href="#" class="text-purple-400 text-sm link link-hover">Register</a>
+                <h2 class="text-xl text-gray-600 absolute top-1/2 -translate-y-1/2 left-0">schedule</h2>
+            </div>
+
+            <div class="w-full h-full overflow-y-auto py-3 px-4 space-y-4">
+
+                <div class="w-full bg-yellow-200 rounded-xl h-28 shadow-md shadow-black/10 p-2.5">
+
+                    <div class="w-full flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase text-yellow-600/80">08:00 - 09:00 AM</p>
+                            <p class="mt-0.5 text-sm text-yellow-700/70 font-[500] capitalize">product review</p>
+                        </div>
+                        <span class="iconify" data-icon="mdi:dots-vertical"></span>
+                    </div>
+
+                    <div class="flex -space-x-1.5 mt-5">
+                        <div class="w-6 h-6 rounded-full bg-red-600"></div>
+                        <div class="w-6 h-6 rounded-full bg-green-600"></div>
+                        <div class="w-6 h-6 rounded-full bg-blue-600"></div>
+                    </div>
+
+                </div>
+
+                <div class="w-full bg-sky-200 rounded-xl h-28 shadow-md shadow-black/10 p-2.5">
+
+                    <div class="w-full flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase text-sky-600/80">08:00 - 09:00 AM</p>
+                            <p class="mt-0.5 text-sm text-sky-700/70 font-[500] capitalize">product review</p>
+                        </div>
+                        <span class="iconify" data-icon="mdi:dots-vertical"></span>
+                    </div>
+
+                    <div class="flex -space-x-1.5 mt-5">
+                        <div class="w-6 h-6 rounded-full bg-red-600"></div>
+                        <div class="w-6 h-6 rounded-full bg-green-600"></div>
+                        <div class="w-6 h-6 rounded-full bg-blue-600"></div>
+                    </div>
+
+                </div>
+
+                <div class="w-full bg-orange-200 rounded-xl h-28 shadow-md shadow-black/10 p-2.5">
+
+                    <div class="w-full flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase text-orange-600/80">08:00 - 09:00 AM</p>
+                            <p class="mt-0.5 text-sm text-orange-700/70 font-[500] capitalize">product review</p>
+                        </div>
+                        <span class="iconify" data-icon="mdi:dots-vertical"></span>
+                    </div>
+
+                    <div class="flex -space-x-1.5 mt-5">
+                        <div class="w-6 h-6 rounded-full bg-red-600"></div>
+                        <div class="w-6 h-6 rounded-full bg-green-600"></div>
+                        <div class="w-6 h-6 rounded-full bg-blue-600"></div>
+                    </div>
+
+                </div>
+
+                <div class="w-full bg-green-200 rounded-xl h-28 shadow-md shadow-black/10 p-2.5">
+
+                    <div class="w-full flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase text-green-600/80">08:00 - 09:00 AM</p>
+                            <p class="mt-0.5 text-sm text-green-700/70 font-[500] capitalize">product review</p>
+                        </div>
+                        <span class="iconify" data-icon="mdi:dots-vertical"></span>
+                    </div>
+
+                    <div class="flex -space-x-1.5 mt-5">
+                        <div class="w-6 h-6 rounded-full bg-red-600"></div>
+                        <div class="w-6 h-6 rounded-full bg-green-600"></div>
+                        <div class="w-6 h-6 rounded-full bg-blue-600"></div>
+                    </div>
+
+                </div>
+
+                <div class="w-full bg-purple-200 rounded-xl h-28 shadow-md shadow-black/10 p-2.5">
+
+                    <div class="w-full flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase text-purple-600/80">08:00 - 09:00 AM</p>
+                            <p class="mt-0.5 text-sm text-purple-700/70 font-[500] capitalize">product review</p>
+                        </div>
+                        <span class="iconify" data-icon="mdi:dots-vertical"></span>
+                    </div>
+
+                    <div class="flex -space-x-1.5 mt-5">
+                        <div class="w-6 h-6 rounded-full bg-red-600"></div>
+                        <div class="w-6 h-6 rounded-full bg-green-600"></div>
+                        <div class="w-6 h-6 rounded-full bg-blue-600"></div>
+                    </div>
+
+                </div>
+
+                <div class="w-full bg-sky-200 rounded-xl h-28 shadow-md shadow-black/10 p-2.5">
+
+                    <div class="w-full flex items-center justify-between">
+                        <div>
+                            <p class="text-xs uppercase text-sky-600/80">08:00 - 09:00 AM</p>
+                            <p class="mt-0.5 text-sm text-sky-700/70 font-[500] capitalize">product review</p>
+                        </div>
+                        <span class="iconify" data-icon="mdi:dots-vertical"></span>
+                    </div>
+
+                    <div class="flex -space-x-1.5 mt-5">
+                        <div class="w-6 h-6 rounded-full bg-red-600"></div>
+                        <div class="w-6 h-6 rounded-full bg-green-600"></div>
+                        <div class="w-6 h-6 rounded-full bg-blue-600"></div>
+                    </div>
+
+                </div>
+
             </div>
         </div>
+
     </div>
+
+    <script src="https://code.iconify.design/3/3.0.1/iconify.min.js"></script>
 </body>
 
 </html>
